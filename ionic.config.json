@@ -1,0 +1,8 @@
+{
+  "name": "okdesk-mobile-evotor",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "app_id": ""
+}

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Голосовое сообщение</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="voice-form">
+    <span class="title">{{voice_recording_button_text}}</span>
+    <div class="start-recording-button-block">
+      <button class="start-recording-button" [disabled]="has_record"
+              [class.grey-button]="start_voice_recording"
+              (press)="startRecording()" (touchend)="stopRecording()" ion-button>
+              <ion-icon class="icon-microphone" name="mic"></ion-icon>
+              Начать запись</button>
+      <div *ngIf="start_voice_recording" class="circle">
+        <div class="circle-animation" style="animation-delay: 0s"></div>
+        <div class="circle-animation" style="animation-delay: 0.5s"></div>
+        <div class="circle-animation" style="animation-delay: 1s"></div>
+        <div class="circle-animation" style="animation-delay: 1.5s"></div>
+      </div>
+    </div>
+    <div class="footer">
+      <span class="prompt" *ngIf="has_record">Сформировано голосовое сообщение</span>
+      <button ion-button *ngIf="has_record" class="submit-voice-record okdesk-button"
+              (click)="submit()">Прикрепить запись</button>
+      <button ion-button *ngIf="has_record" class="reset-voice-record grey-button okdesk-button"
+              (click)="reset()">Перезаписать</button>
+    </div>
+  </div>
+</ion-content>

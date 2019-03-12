@@ -1,0 +1,349 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+/** Styling for the error text and container **/
+.form-errors {
+  margin: 5px 0
+}
+.form-error {
+  padding: 2px 0;
+  color: color($colors, danger);
+}
+.input-error, .item.item-textarea.input-error, .item.item-input.input-error, .item.item-datetime.input-error,
+  .item.item-date.input-error, .item.item-select.input-error {
+  border-color: color($colors, danger) !important;
+
+  .item-inner {
+    border-color: color($colors, danger) !important;
+  }
+}
+
+//okdesk theme override
+
+.okdesk-button {
+  border-radius: 0 0 0 0;
+  box-shadow: none;
+  font-size: 1.6rem;
+  text-transform: none;
+  font-weight: normal;
+  height: 4rem;
+}
+
+.grey-button {
+  background-color: color($colors, grey-btn-color) !important;
+}
+
+.resume-button {
+  color: color($colors, grey-btn-color) !important;
+}
+
+.disabled-button {
+  background-color: color($colors, primary-low-opacity) !important;
+  cursor: default;
+}
+
+.change-status-button {
+  height: auto !important;
+  padding: 3px 7px !important;
+  float: right;
+  margin: 0;
+  max-width: 70%;
+
+  .button-inner{
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+  }
+}
+
+ion-list-header {
+  margin: 0 !important;
+  font-size: 1.6rem !important;
+}
+
+ion-popover {
+  margin-top: -3px;
+  margin-left: -4px;
+
+  .status-button .button-inner{
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 1.2rem;
+    display: block;
+  }
+
+  .popover-content {
+    box-shadow: none;
+  }
+}
+
+.toolbar-title {
+  font-size: 2.2rem;
+  font-weight: 300;
+}
+
+.toolbar-background {
+  background: #ffffff;
+}
+
+.footer::before {
+  background: none !important;
+}
+
+.toolbar {
+  ion-icon {
+    font-size: 2em;
+    color: $theme-grey;
+  }
+  i.fa {
+    font-size: 1.8em;
+    padding: 1rem;
+  }
+}
+
+i.fa {
+  color: $theme-grey;
+}
+
+.footer-buttons {
+  button {
+    background: color($colors, grey-btn-color) !important;
+    color: #ffffff !important;
+    padding: 1em;
+    margin: 0 0.5em !important;
+
+    &.green {
+      background: color($colors, primary) !important;
+    }
+  }
+}
+
+.custom-searchbar {
+  padding: 0 !important;
+
+  .searchbar-input {
+    box-shadow: none !important;
+    font-size: 1.9rem;
+    font-weight: 300;
+    padding: 6px 0 6px 55px;
+  }
+
+  .searchbar-search-icon {
+    top: 8px;
+  }
+
+  .searchbar-clear-icon {
+    display: none !important;
+  }
+}
+
+ion-item {
+  padding: 0 !important;
+}
+
+form, .okdesk-form {
+  ion-label {
+    font-size: 1.6rem !important;
+    font-weight: 300;
+    color: $theme-grey !important;
+    margin-top: 3rem !important;
+  }
+
+  ion-item {
+    &:first-of-type ion-label {
+      margin-top: 2rem !important;
+    }
+  }
+}
+
+.item.item-textarea, .item.item-input, .item.item-datetime,
+  .item.item-date, .item.item-select {
+
+  .item-inner {
+    border-color: $theme-grey !important;
+    box-shadow: none !important;
+  }
+
+  .select-icon-inner {
+    color: $theme-grey;
+  }
+}
+
+ion-grid .col-left {
+  text-align: left;
+}
+
+ion-grid .col-right {
+  text-align: right;
+
+  button {
+    margin: 0 !important;
+  }
+}
+
+.attachment-item {
+  border-bottom: 1px solid $theme-light-grey;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+  background: $background-color;
+
+  &:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .attachment-icon {
+    width: $item-md-avatar-size;
+    height: $item-md-avatar-size;
+    border-radius: 50%;
+    font-size: 2rem;
+    border: 1px solid $theme-light-grey;
+    text-align: center;
+
+    i.fa {
+      margin: 1.45rem;
+      width: 2rem;
+      display: block;
+      height: 2rem;
+      font-size: 2rem;
+      vertical-align: bottom;
+      color: color($colors, primary);
+      padding: 0 !important;
+    }
+  }
+
+  .attachment-size, .attachment-date, .attachment-description {
+    color: color($colors, secondary);
+    margin-top: 0.3em;
+  }
+
+  .attachment-name {
+    white-space: nowrap;
+    font-size: 1.6rem;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .attachment-is-public {
+    line-height: 1.4em;
+    margin-top: 0.3em;
+
+    ion-icon {
+      vertical-align: middle;
+      padding-right: 0.3em;
+    }
+
+  }
+
+  .close-btn {
+    background: $theme-light-grey;
+    padding: .1rem .65rem;
+    margin: 0;
+    font-size: 2rem;
+    height: 2.4rem !important;
+  }
+}
+
+// custom width fot ion-grid component
+ion-col[width-70] {
+  -webkit-flex: 0 0 70%;
+  -ms-flex: 0 0 70%;
+  flex: 0 0 70%;
+  max-width: 70%;
+}
+
+.required-info {
+  font-weight: 300;
+  color: $theme-grey;
+  padding: 2rem 0;
+}
+
+.alert-radio-label {
+  font-size: 1.6rem;
+}
+
+.clear {
+  clear: both;
+  width: 0;
+  height: 0;
+}
+
+.toolbar-ios ion-title {
+  padding: 0px 0px 1px 25px;
+}
+
+.popover-ios .scroll-content {
+  overflow: hidden;
+}
+.searchbar-ios {
+  .searchbar-input {
+    font-size: 1.6rem !important;
+  }
+  .searchbar-search-icon {
+    left: 5px;
+    top: 5px;
+  }
+}
+
+.navbar-segment {
+  height: 70px;
+
+  .navbar-segment-button {
+    height: 70px;
+
+    .navbar-segment-button-text {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .navbar-segment-button-icon {
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+ .back-button-text-md {display:none !important;}
+
+
+.no-items {
+  background: $background-color;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin-top: 40%;
+
+  img {
+    width: 40%;
+    height: auto;
+  }
+
+  .no-items-text {
+    color: color($colors, secondary);
+    margin-top: 1em;
+    font-size: 2rem;
+    font-weight: 300;
+    width: 100%;
+  }
+}

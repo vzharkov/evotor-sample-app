@@ -1,0 +1,39 @@
+<ion-header>
+</ion-header>
+
+<ion-content padding>
+  <form #loginCreds="ngForm" (ngSubmit)="onSubmit($event)">
+    <button type="button" ion-button block (click)="showVoiceIssueForm()">
+      <ion-icon class="icon-microphone" name="mic"></ion-icon>
+      <span>{{send_voice_issue_button}}</span>
+    </button>
+    <ion-item [class.input-error]="errors.title">
+      <ion-label stacked>Тема *</ion-label>
+      <ion-input type="text" [(ngModel)]="model.title" name="title" id="issue-title"></ion-input>
+    </ion-item>
+    <div class="form-errors" *ngIf="errors.title">
+      <div *ngFor="let error of errors.title" class="form-error">{{ error }}</div>
+    </div>
+
+    <div class="required-info">
+      * &ndash; обязательные поля
+    </div>
+
+    <ion-grid class="new-issue-btn-grid">
+      <ion-row>
+        <ion-col width-50>
+          <button ion-button block class="okdesk-button grey-button"
+                  type="button" (click)="goBack()">
+            Отмена
+          </button>
+        </ion-col>
+        <ion-col width-50>
+          <button ion-button block class="okdesk-button" type="button"
+                  (click)="onSubmit($event)" [disabled]="this.sending">
+            Создать
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

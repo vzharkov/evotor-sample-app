@@ -1,0 +1,73 @@
+voice-form-popover {
+  .voice-form {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    height: 100%;
+
+    .title, .prompt {
+      font-size: 1.6rem;
+    }
+
+    .start-recording-button-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+      button.start-recording-button {
+        border-radius: 50%;
+        width: 200px;
+        height: 190px;
+        z-index: 100;
+        top: 19%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        position: absolute;
+
+        .icon-microphone {
+          margin-right: 4%;
+        }
+      }
+
+      .circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .circle-animation {
+          border-radius: 50%;
+          background-color: color($colors, grey-btn-color);
+          width: 200px;
+          height: 190px;
+          position: absolute;
+          top: 19%;
+          left: 0;
+          right: 0;
+          margin: auto;
+          opacity: 0;
+          animation: circleAnimation 2s infinite cubic-bezier(.2, .4, .6, .8);
+        }
+      }
+    }
+
+    .footer {
+      display: flex;
+      height: 50%;
+      justify-content: flex-end;
+      flex-direction: column;
+    }
+  }
+
+  @keyframes circleAnimation {
+    from {
+      transform: scale(1, 1);
+      opacity: .5;
+    }
+    to {
+      transform: scale(2, 2);
+      opacity: 0;
+    }
+  }
+}
